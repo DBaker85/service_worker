@@ -1,0 +1,27 @@
+{
+  "name": "service_worker",
+  "version": "1.0.0",
+  "description": "demo on how service workers work",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DBaker85/service_worker.git"
+  },
+  "keywords": [
+    "serviceworker",
+    "zelda",
+    "offline"
+  ],
+  "author": "david Baker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DBaker85/service_worker/issues"
+  },
+  "homepage": "https://github.com/DBaker85/service_worker#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
