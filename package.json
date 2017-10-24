@@ -4,7 +4,9 @@
   "description": "demo on how service workers work",
   "main": "server/app.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "nodemon": "nodemon",
+    "serve" :"nodemon server/app.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,8 @@
   "homepage": "https://github.com/DBaker85/service_worker#readme",
   "dependencies": {
     "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
   }
 }
