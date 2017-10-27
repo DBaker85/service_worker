@@ -40,21 +40,21 @@ Your browser isn't invited for super fun audio time.
                         function(registration){
                             console.log(registration)
                             console.log('yay service worker registered');
-                            return registration;
+                            if ('PushManager' in window) {
+                            askPermission()
+                            .then(
+                                ()=>{
+                                    console.log('accepted');               
+                                },
+                                ()=>{
+                                    console.log('rejected');
+                                })
+                        }
+
                         }
                     )
         }
-        if ('PushManager' in window) {
-            askPermission()
-            .then(
-                ()=>{
-                    console.log('approved');
-                },
-                ()=>{
-                    console.log('rejected');
-                })
-        }
-
+        
         function askPermission() {
             return new Promise(function(resolve, reject) {
                 const permissionResult = Notification.requestPermission(function(result) {
@@ -71,6 +71,8 @@ Your browser isn't invited for super fun audio time.
                 }
             });
         }
+
+      
     </script>
 
 </body>

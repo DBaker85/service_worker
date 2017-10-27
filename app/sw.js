@@ -13,16 +13,7 @@ self.addEventListener('install', function(event){
           ]);
         })
       );
-      serviceWorkerRegistration.showNotification(check, {
-        "body": "Did you make a $1,000,000 purchase at Dr. Evil...",
-        "icon": "images/ccard.png",
-        "vibrate": [200, 100, 200, 100, 200, 100, 400],
-        "tag": "request",
-        "actions": [
-          { "action": "yes", "title": "Yes", "icon": "images/yes.png" },
-          { "action": "no", "title": "No", "icon": "images/no.png" }
-        ]
-      });
+      
     
      }
     )
@@ -34,4 +25,10 @@ self.addEventListener('install', function(event){
             }));
     });
 
-    
+    self.addEventListener('push', function(event) {
+      if (event.data) {
+        console.log('This push event has data: ', event.data.text());
+      } else {
+        console.log('This push event has no data.');
+      }
+    });
