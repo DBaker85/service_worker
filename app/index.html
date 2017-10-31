@@ -38,39 +38,43 @@ Your browser isn't invited for super fun audio time.
                     .register('/sw.js')
                     .then(
                         function(registration){
-                            console.log(registration)
-                            console.log('yay service worker registered');
+                            // console.log(registration)
+                            // console.log('yay service worker registered');
                             if ('PushManager' in window) {
-                            askPermission()
-                            .then(
-                                ()=>{
-                                    console.log('accepted');               
-                                },
-                                ()=>{
-                                    console.log('rejected');
-                                })
+                                Notification.requestPermission(function(result){
+                                console.log(result);
+                            })
+
+                            // askPermission()
+                            // .then(
+                            //     ()=>{
+                            //         console.log('accepted');               
+                            //     },
+                            //     ()=>{
+                            //         console.log('rejected');
+                            //     })
                         }
 
                         }
                     )
         }
         
-        function askPermission() {
-            return new Promise(function(resolve, reject) {
-                const permissionResult = Notification.requestPermission(function(result) {
-                resolve(result);
-                });
+        // function askPermission() {
+        //     return new Promise(function(resolve, reject) {
+        //         const permissionResult = Notification.requestPermission(function(result) {
+        //         resolve(result);
+        //         });
 
-                if (permissionResult) {
-                permissionResult.then(resolve, reject);
-                }
-            })
-            .then(function(permissionResult) {
-                if (permissionResult !== 'granted') {
-                throw new Error('We weren\'t granted permission.');
-                }
-            });
-        }
+        //         if (permissionResult) {
+        //         permissionResult.then(resolve, reject);
+        //         }
+        //     })
+        //     .then(function(permissionResult) {
+        //         if (permissionResult !== 'granted') {
+        //         throw new Error('We weren\'t granted permission.');
+        //         }
+        //     });
+        // }
 
       
     </script>
