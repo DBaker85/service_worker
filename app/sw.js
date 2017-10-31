@@ -27,8 +27,8 @@ self.addEventListener('install', function(event){
 
     self.addEventListener('push', function(event) {
       if (event.data) {
-        console.log('This push event has data: ', event.data.text());
+        console.log('Push event received: ', event.data.text());
       } else {
-        console.log('This push event has no data.');
+        console.log('Empty push event received');
       }
     });
