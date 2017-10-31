@@ -26,9 +26,11 @@ self.addEventListener('install', function(event){
     });
 
     self.addEventListener('push', function(event) {
-      if (event.data) {
-        console.log('Push event received: ', event.data.text());
-      } else {
-        console.log('Empty push event received');
-      }
+      if(Notification.permission === 'granted') { 
+        if (event.data) {
+          console.log('Push event received: ', event.data.text());
+        } else {
+          console.log('Empty push event received');
+        }
+    }
     });

@@ -38,22 +38,23 @@ Your browser isn't invited for super fun audio time.
                     .register('/sw.js')
                     .then(
                         function(registration){
-                            // console.log(registration)
-                            // console.log('yay service worker registered');
+                            console.log(registration)
+                           
                             if ('PushManager' in window) {
-                                Notification.requestPermission(function(result){
-                                console.log(result);
-                            })
-
-                            // askPermission()
-                            // .then(
-                            //     ()=>{
-                            //         console.log('accepted');               
-                            //     },
-                            //     ()=>{
-                            //         console.log('rejected');
-                            //     })
-                        }
+                               
+                                Notification.requestPermission(function(result) {
+                                    console.log(`request permission: ${result}`);
+                                });
+                                
+                                    // askPermission()
+                                    // .then(
+                                    //     ()=>{
+                                    //         console.log('accepted');               
+                                    //     },
+                                    //     ()=>{
+                                    //         console.log('rejected');
+                                    //     })
+                            }
 
                         }
                     )

@@ -1,6 +1,6 @@
 {
     "name": "Instant treasure chest opener",
-    "shortname":"Treasure Chest",
+    "short_name":"Treasure Chest",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
