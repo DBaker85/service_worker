@@ -22,7 +22,7 @@ self.addEventListener('install', function(event){
     self.addEventListener('fetch', function(event) {
         event.respondWith(
             caches.match(event.request).then(function(response) {
-            return response || fetch(event.request);
+              return response || fetch(event.request);
             }));
     });
 
@@ -31,7 +31,7 @@ self.addEventListener('install', function(event){
       
       if(Notification.permission === 'granted') { 
         if (event.data) {
-          
+
           console.log('Push event received: ', event.data.text());
           
           const title = 'Hey! Listen!';
@@ -43,8 +43,6 @@ self.addEventListener('install', function(event){
           event.waitUntil(self.registration.showNotification(title, options));
         
         
-        } else {
-          console.log('Empty push event received');
-        }
+        } 
     }
     });
