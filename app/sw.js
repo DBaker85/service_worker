@@ -10,7 +10,8 @@ self.addEventListener('install', function(event){
             '/css/style.css',
             '/js/index.js',
             '/sound/chest.mp3',
-            '/images/navi.jpg'
+            '/images/navi.jpg',
+            '/sw.js'
           ]);
         })
       );
