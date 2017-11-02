@@ -9,7 +9,8 @@ self.addEventListener('install', function(event){
             '/index.html',
             '/css/style.css',
             '/js/index.js',
-            '/sound/chest.mp3'
+            '/sound/chest.mp3',
+            '/images/navi.png'
           ]);
         })
       );
@@ -26,9 +27,22 @@ self.addEventListener('install', function(event){
     });
 
     self.addEventListener('push', function(event) {
+     
+      
       if(Notification.permission === 'granted') { 
         if (event.data) {
+          
           console.log('Push event received: ', event.data.text());
+          
+          const title = 'Hey! Listen!';
+          const options = {
+            body: event.data.text(),
+            icon: 'images/navi.png'
+          };
+          
+          event.waitUntil(self.registration.showNotification(title, options));
+        
+        
         } else {
           console.log('Empty push event received');
         }
