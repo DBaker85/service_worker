@@ -20,6 +20,8 @@ self.addEventListener('install', function(event){
      }
     )
 
+    // Load from cache first as these are shell files that will not change
+    
     self.addEventListener('fetch', function(event) {
         event.respondWith(
             caches.match(event.request).then(function(response) {
@@ -29,8 +31,6 @@ self.addEventListener('install', function(event){
 
     self.addEventListener('push', function(event) {
      
-      
-      if(Notification.permission === 'granted') { 
         if (event.data) {
 
           console.log('Push event received: ', event.data.text());
@@ -45,5 +45,5 @@ self.addEventListener('install', function(event){
         
         
         } 
-    }
+    
     });
