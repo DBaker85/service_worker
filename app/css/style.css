@@ -1,7 +1,4 @@
-@font-face {
-  font-family: 'Zelda';
-  src: url("http://acjanus.co/codepen/assets/zelda-chest/TLOZ-Links-Awakening.ttf") format("truetype"), url("http://acjanus.co/codepen/assets/zelda-chest/TLOZ-Links-Awakening.woff") format("woff"), url("http://acjanus.co/codepen/assets/zelda-chest/TLOZ-Links-Awakening.woff2") format("woff2");
-}
+
 @keyframes rupeeRise {
   0% {
     bottom: 130px;
