@@ -10,7 +10,7 @@ self.addEventListener('install', function(event){
             '/css/style.css',
             '/js/index.js',
             '/sound/chest.mp3',
-            '/images/navi.png'
+            '/images/navi.jpg'
           ]);
         })
       );
@@ -37,7 +37,7 @@ self.addEventListener('install', function(event){
           const title = 'Hey! Listen!';
           const options = {
             body: event.data.text(),
-            icon: 'images/navi.png'
+            icon: 'images/navi.jpg'
           };
           
           event.waitUntil(self.registration.showNotification(title, options));
