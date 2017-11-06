@@ -49,7 +49,7 @@ self.addEventListener('install', function(event){
     });
 
     self.addEventListener('sync', function(event) {
-      fetch('https://baconipsum.com/api/?type=all-meat&sentences=1&start-with-lorem=1')
+      fetch('https://baconipsum.com/api/?type=all-meat&sentences=1&start-with-lorem=1&format=json')
       .then(
         function(response) {
           if (response.status !== 200) {
@@ -61,11 +61,11 @@ self.addEventListener('install', function(event){
           // Examine the text in the response
           response.json().then(function(data) {
             const title = 'Hey! Look!';
-                  const options = {
-                    body: data[0],
-                    icon: 'images/navi.jpg'
-                  };
-                   event.waitUntil(self.registration.showNotification(title, options));
+            const options = {
+              body: data,
+              icon: 'images/navi.jpg'
+            };
+            self.registration.showNotification(title, options);
           });
         }
       )
