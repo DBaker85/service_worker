@@ -29,7 +29,7 @@ if('serviceWorker' in navigator) {
 
                         registration.pushManager.subscribe({
                             userVisibleOnly: true,
-                            applicationServerKey: urlB64ToUint8Array('BNIOdB-bJVl_1i_ggLeFKkxX3XDv3akHkm-0pc5baOR-TDhV8gVgddebZKTAtrolT3-vy0h9PISErr2SIqPE56A')
+                            applicationServerKey: urlB64ToUint8Array('BFDirESauVTD0R00ixQBs1Gh7iKbONoDKUFLzBT7qH-z73bno3eNxXWEb-qG_LT_A_dlRe-nzQo8nLU5CGvKdIA')
                         }).then(subscription => {
                             console.log(
                                 JSON.stringify(subscription)
